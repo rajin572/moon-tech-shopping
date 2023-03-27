@@ -1,6 +1,9 @@
 import React from "react";
+import { useProduct } from "../context/ProductProvider";
 
 const Home = () => {
+    const {state: {products, error, loading}} = useProduct()
+    console.log(products);
 
 
   return (
