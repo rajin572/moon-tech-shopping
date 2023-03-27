@@ -18,8 +18,8 @@ const Navbar = () => {
           <Link to='/about'>About</Link>
         </li>
         <li title='Wishlist' className='bg-indigo-500 p-2 rounded-full'>
-          <Link to='/'>
-            <IoIosListBox className='text-white' />
+          <Link to='/wishlist'>
+            <IoIosListBox title='Wishlist' className='text-white' />
           </Link>
         </li>
         <li title='cart' className='bg-indigo-500 p-2 rounded-full'>

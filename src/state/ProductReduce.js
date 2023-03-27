@@ -34,6 +34,16 @@ export const ProductReduce = (state, action) => {
               ...state,
               cart: [...state.cart, action.payload],
             };
+          case ActionTypes.ADD_TO_WISHLIST:
+            return {
+              ...state,
+              wishlist: [...state.wishlist, action.payload],
+            };
+          case ActionTypes.REMOVE_FROM_CART:
+            return {
+                ...state,
+                cart: state.cart.filter((item) => item !== action.payload)
+            };
         default:
         return state
     };

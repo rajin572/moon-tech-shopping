@@ -1,9 +1,10 @@
 import React from 'react';
-import { BiListPlus } from "react-icons/bi";
+import { BiListPlus } from 'react-icons/bi';
 import { useProduct } from '../context/ProductProvider';
 import { ActionTypes } from '../state/ActionType';
 
-const ProductCard = ({product}) => {
+const ParticularCard = ({product}) => {
+    console.log(product);
     const {dispatch} = useProduct()
     return (
 <div
@@ -25,10 +26,10 @@ const ProductCard = ({product}) => {
         <button
           className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold'
           onClick={() =>
-            dispatch({ type: ActionTypes.ADD_TO_CART, payload: product })
+            dispatch({ type: ActionTypes.REMOVE_FROM_CART, payload: product })
           }
         >
-          Add to cart
+         Remove From Cart
         </button>
         <button
           title='Add to wishlist'
@@ -42,4 +43,4 @@ const ProductCard = ({product}) => {
     );
 };
 
-export default ProductCard;
+export default ParticularCard;
