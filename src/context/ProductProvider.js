@@ -4,18 +4,18 @@ import { InitialState, ProductReduce } from '../state/ProductReduce';
 
 const PRODUCT_CONTEXT = createContext()
 
-const ProductProvider = ({children}) => {
+const ProductProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(ProductReduce, InitialState)
 
     useEffect(() => {
         dispatch({ type: ActionTypes.FETCHING_START });
         fetch('products.json')
-        .then(res => res.json())
-        .then(data => dispatch({type: ActionTypes.FETCHING_SUCCESS, payload: data }))
-        .catch(() => {
-            dispatch({ type: ActionTypes.FETCHING_ERROR });
-          });
+            .then(res => res.json())
+            .then(data => dispatch({ type: ActionTypes.FETCHING_SUCCESS, payload: data }))
+            .catch(() => {
+                dispatch({ type: ActionTypes.FETCHING_ERROR });
+            });
     }, [])
 
     const value = {
